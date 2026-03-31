@@ -1,16 +1,16 @@
 #!/bin/bash
-# deploy.sh — push to GitHub (Cloudflare Pages auto-deploys from main)
-set -e
 
-MSG="${1:-Update site}"
+cd '/Users/carl/Dropbox/AI experiments/carlosfandango'
 
-echo "→ Adding files..."
+echo "📦 Staging changes..."
 git add -A
 
-echo "→ Committing: $MSG"
-git commit -m "$MSG" || echo "Nothing to commit."
+echo "💬 Enter a commit message:"
+read message
 
-echo "→ Pushing to GitHub..."
-git push origin main
+git commit -m "$message"
 
-echo "✓ Done. Cloudflare Pages will deploy in ~30 seconds."
+echo "🚀 Pushing to GitHub..."
+git push
+
+echo "✅ Done! Cloudflare Pages will deploy in ~30 seconds."

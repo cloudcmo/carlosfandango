@@ -1,7 +1,7 @@
 ---
 layout: layouts/base
 title: Blog
-description: Writing by Carlos Fandango.
+description: Writing by Carlosfandango.
 permalink: /blog/
 ---
 
@@ -14,7 +14,10 @@ permalink: /blog/
     {% for post in collections.posts %}
       <li class="post-list-item">
         <a href="{{ post.url }}">
-          <span class="post-list-title">{{ post.data.title }}</span>
+          <div class="post-list-main">
+            <span class="post-list-title">{{ post.data.title }}</span>
+            <span class="post-list-excerpt">{{ post.templateContent | excerpt }}</span>
+          </div>
           <time class="post-list-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
         </a>
       </li>

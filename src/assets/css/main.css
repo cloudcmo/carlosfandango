@@ -1,17 +1,17 @@
 /* =========================================
-   CARLOS FANDANGO — main.css
+   CARLOSFANDANGO — main.css
    Stack: Lora (serif) + DM Mono
-   Palette: off-white, near-black, warm mid
+   Palette: white bg, near-black, yellow accent
    ========================================= */
 
 :root {
-  --bg:        #F7F5F0;
+  --bg:        #FFFFFF;
   --fg:        #1A1916;
   --mid:       #6B6760;
-  --rule:      #DEDAD4;
-  --accent:    #C0440A;
-  --card-bg:   #FFFFFF;
-  --card-hover:#FFF9F5;
+  --rule:      #E8E4DC;
+  --accent:    #E8B500;
+  --accent-fg: #1A1916;
+  --card-hover:#FFFBEE;
 
   --font-serif: 'Lora', Georgia, serif;
   --font-mono:  'DM Mono', 'Courier New', monospace;
@@ -42,10 +42,7 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
 /* ---- Layout ---- */
 .main {
@@ -57,9 +54,7 @@ a {
 }
 
 /* ---- Header / Nav ---- */
-.site-header {
-  border-bottom: 1px solid var(--rule);
-}
+.site-header { border-bottom: 1px solid var(--rule); }
 
 .nav {
   max-width: var(--max-w);
@@ -75,29 +70,21 @@ a {
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: var(--fg);
-  text-decoration: none;
-  border: 1px solid var(--fg);
-  padding: 0.25rem 0.55rem;
-  transition: background 0.15s, color 0.15s;
+  color: var(--accent-fg);
+  background: var(--accent);
+  padding: 0.25rem 0.6rem;
+  transition: opacity 0.15s;
 }
 
-.nav-home:hover {
-  background: var(--fg);
-  color: var(--bg);
-}
+.nav-home:hover { opacity: 0.8; }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
+.nav-links { display: flex; gap: 2rem; }
 
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   color: var(--mid);
-  text-decoration: none;
   transition: color 0.15s;
 }
 
@@ -121,7 +108,7 @@ a {
 }
 
 .intro h1 {
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(2.8rem, 10vw, 5.5rem);
   font-weight: 400;
   font-style: italic;
   line-height: 1.05;
@@ -147,14 +134,11 @@ a {
 }
 
 /* ---- Projects ---- */
-.projects {
-  margin-bottom: 4rem;
-}
+.projects { margin-bottom: 4rem; }
 
 .project-grid {
   display: flex;
   flex-direction: column;
-  gap: 0;
   border-top: 1px solid var(--rule);
 }
 
@@ -163,39 +147,29 @@ a {
   grid-template-columns: 2.5rem 1fr auto;
   align-items: center;
   gap: 1.25rem;
-  padding: 1.25rem 0;
+  padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--rule);
   text-decoration: none;
   color: var(--fg);
-  transition: background 0.1s;
   margin: 0 -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  transition: background 0.1s;
   border-radius: 2px;
 }
 
-.project-card:hover {
-  background: var(--card-hover);
-}
-
-.project-card:hover .project-arrow {
-  transform: translateX(4px);
-  color: var(--accent);
-}
+.project-card:hover { background: var(--card-hover); }
+.project-card:hover .project-arrow { transform: translateX(4px); color: var(--accent); }
 
 .project-number {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--mid);
   letter-spacing: 0.05em;
-  padding-top: 0.1rem;
 }
 
 .project-content h3 {
   font-size: 1rem;
   font-weight: 500;
   font-style: normal;
-  letter-spacing: 0;
   margin-bottom: 0.15rem;
 }
 
@@ -212,10 +186,8 @@ a {
   transition: transform 0.15s, color 0.15s;
 }
 
-/* ---- Recent posts / blog list ---- */
-.recent-posts {
-  margin-top: 3.5rem;
-}
+/* ---- Post lists ---- */
+.recent-posts { margin-top: 3.5rem; }
 
 .section-header {
   display: flex;
@@ -227,12 +199,13 @@ a {
 .view-all {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--accent-fg);
+  background: var(--accent);
+  padding: 0.2rem 0.55rem;
   transition: opacity 0.15s;
 }
 
-.view-all:hover { opacity: 0.7; }
+.view-all:hover { opacity: 0.8; }
 
 .post-list {
   list-style: none;
@@ -241,34 +214,47 @@ a {
 
 .post-list-item a {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
   border-bottom: 1px solid var(--rule);
-  text-decoration: none;
   color: var(--fg);
   transition: color 0.15s;
 }
 
-.post-list-item a:hover .post-list-title {
-  color: var(--accent);
+.post-list-item a:hover .post-list-title { color: var(--mid); }
+
+.post-list-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
 }
 
 .post-list-title {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.4;
+}
+
+.post-list-excerpt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--mid);
+  line-height: 1.5;
 }
 
 .post-list-date {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--mid);
   white-space: nowrap;
   flex-shrink: 0;
+  padding-top: 0.2rem;
 }
 
-/* ---- Blog archive header ---- */
+/* ---- Blog header ---- */
 .blog-header {
   padding: 3rem 0 2.5rem;
   border-bottom: 1px solid var(--rule);
@@ -282,9 +268,7 @@ a {
 }
 
 /* ---- Single post ---- */
-.post {
-  max-width: 660px;
-}
+.post { max-width: 660px; }
 
 .post-header {
   padding: 3rem 0 2rem;
@@ -303,7 +287,8 @@ a {
 }
 
 .tag {
-  background: var(--rule);
+  background: var(--accent);
+  color: var(--accent-fg);
   padding: 0.1rem 0.5rem;
   border-radius: 2px;
   font-size: 0.7rem;
@@ -316,21 +301,16 @@ a {
   line-height: 1.25;
 }
 
-/* Post body prose */
-.post-body {
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
+.post-body { font-size: 1.05rem; line-height: 1.8; }
 .post-body p { margin-bottom: 1.5rem; }
 .post-body h2 { margin: 2.5rem 0 1rem; font-size: 1.3rem; }
 .post-body h3 { margin: 2rem 0 0.75rem; font-size: 1.1rem; }
 .post-body ul, .post-body ol { margin: 0 0 1.5rem 1.5rem; }
 .post-body li { margin-bottom: 0.4rem; }
-.post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-.post-body a:hover { opacity: 0.75; }
+.post-body a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.post-body a:hover { text-decoration-color: var(--fg); }
 .post-body blockquote {
-  border-left: 3px solid var(--rule);
+  border-left: 3px solid var(--accent);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: var(--mid);
@@ -352,24 +332,14 @@ a {
   margin-bottom: 1.5rem;
 }
 .post-body pre code { background: none; padding: 0; }
-.post-body img {
-  max-width: 100%;
-  height: auto;
-  margin: 2rem 0;
-  display: block;
-}
+.post-body img { max-width: 100%; height: auto; margin: 2rem 0; display: block; }
 
-.post-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rule);
-}
+.post-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
 
 .back-link {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--mid);
-  text-decoration: none;
   transition: color 0.15s;
 }
 
@@ -385,13 +355,7 @@ a {
 
 /* ---- Responsive ---- */
 @media (max-width: 500px) {
-  .post-list-item a {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
+  .post-list-item a { flex-direction: column; gap: 0.5rem; }
   .post-list-date { font-size: 0.68rem; }
-  .project-card {
-    grid-template-columns: 2rem 1fr auto;
-    gap: 0.75rem;
-  }
+  .project-card { grid-template-columns: 2rem 1fr auto; gap: 0.75rem; }
 }

@@ -11,6 +11,18 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
+  eleventyConfig.addFilter("excerpt", (content, wordCount) => {
+    if (!content) return "";
+    const n = wordCount || 25;
+    const text = content
+      .replace(/(<([^>]+)>)/gi, "")
+      .replace(/[#*`[\]()!]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    const words = text.split(" ");
+    return words.slice(0, n).join(" ") + (words.length > n ? "…" : "");
+  });
+
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
   });

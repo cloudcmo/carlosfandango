@@ -5,7 +5,7 @@ title: Home
 
 <section class="intro">
   <div class="intro-inner">
-    <h1>Carlos<br>Fandango</h1>
+    <h1>Carlosfandango</h1>
     <p class="tagline">Digital work, pub quizzes, and writing from Devon.</p>
   </div>
 </section>
@@ -59,13 +59,15 @@ title: Home
     <a href="/blog" class="view-all">All posts &rarr;</a>
   </div>
 
-  {% set postList = collections.posts | reverse %}
-  {% if postList.length %}
+  {% if collections.posts.length %}
     <ol class="post-list post-list--home">
-      {% for post in postList.slice(0, 5) %}
+      {% for post in collections.posts.slice(0, 5) %}
         <li class="post-list-item">
           <a href="{{ post.url }}">
-            <span class="post-list-title">{{ post.data.title }}</span>
+            <div class="post-list-main">
+              <span class="post-list-title">{{ post.data.title }}</span>
+              <span class="post-list-excerpt">{{ post.templateContent | excerpt }}</span>
+            </div>
             <time class="post-list-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
           </a>
         </li>
