@@ -1,0 +1,27 @@
+---
+layout: layouts/base
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      {% if tags %}
+        {% for tag in tags %}
+          {% if tag != "posts" %}
+            <span class="tag">{{ tag }}</span>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ title }}</h1>
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="/blog" class="back-link">&larr; All posts</a>
+  </footer>
+</article>

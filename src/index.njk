@@ -1,0 +1,77 @@
+---
+layout: layouts/base
+title: Home
+---
+
+<section class="intro">
+  <div class="intro-inner">
+    <h1>Carlos<br>Fandango</h1>
+    <p class="tagline">Digital work, pub quizzes, and writing from Devon.</p>
+  </div>
+</section>
+
+<section class="projects">
+  <h2 class="section-label">Projects</h2>
+  <div class="project-grid">
+
+    <a href="https://pubquizdaily.com" class="project-card" target="_blank" rel="noopener">
+      <span class="project-number">01</span>
+      <div class="project-content">
+        <h3>Pub Quiz Daily</h3>
+        <p>A daily web-based quiz game. New questions every day.</p>
+      </div>
+      <span class="project-arrow">&rarr;</span>
+    </a>
+
+    <a href="https://tomcobleypubquiz.co.uk" class="project-card" target="_blank" rel="noopener">
+      <span class="project-number">02</span>
+      <div class="project-content">
+        <h3>Tom Cobley Pub Quiz</h3>
+        <p>Monthly quiz night at the Tom Cobley Tavern, Spreyton.</p>
+      </div>
+      <span class="project-arrow">&rarr;</span>
+    </a>
+
+    <a href="https://devonmarketingservices.com" class="project-card" target="_blank" rel="noopener">
+      <span class="project-number">03</span>
+      <div class="project-content">
+        <h3>Devon Marketing Services</h3>
+        <p>Web and digital work for clients and good causes.</p>
+      </div>
+      <span class="project-arrow">&rarr;</span>
+    </a>
+
+    <a href="https://cloudcmo.co.uk" class="project-card" target="_blank" rel="noopener">
+      <span class="project-number">04</span>
+      <div class="project-content">
+        <h3>Cloud CMO</h3>
+        <p>cloudcmo.co.uk</p>
+      </div>
+      <span class="project-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="section-header">
+    <h2 class="section-label">Writing</h2>
+    <a href="/blog" class="view-all">All posts &rarr;</a>
+  </div>
+
+  {% set postList = collections.posts | reverse %}
+  {% if postList.length %}
+    <ol class="post-list post-list--home">
+      {% for post in postList.slice(0, 5) %}
+        <li class="post-list-item">
+          <a href="{{ post.url }}">
+            <span class="post-list-title">{{ post.data.title }}</span>
+            <time class="post-list-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p class="empty-state">Posts coming soon.</p>
+  {% endif %}
+</section>

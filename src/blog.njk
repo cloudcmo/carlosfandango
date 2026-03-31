@@ -1,0 +1,25 @@
+---
+layout: layouts/base
+title: Blog
+description: Writing by Carlos Fandango.
+permalink: /blog/
+---
+
+<section class="blog-header">
+  <h1>Writing</h1>
+</section>
+
+{% if collections.posts.length %}
+  <ol class="post-list">
+    {% for post in collections.posts %}
+      <li class="post-list-item">
+        <a href="{{ post.url }}">
+          <span class="post-list-title">{{ post.data.title }}</span>
+          <time class="post-list-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <p class="empty-state">No posts yet.</p>
+{% endif %}
