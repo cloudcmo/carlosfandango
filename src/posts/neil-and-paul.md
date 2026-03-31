@@ -1,0 +1,10 @@
+---
+title: "Neil and Paul"
+date: 2009-06-28
+
+tags:
+  - posts
+layout: layouts/post
+---
+
+I saw something amazing last night. But first  - a confession. Despite having seen hundreds of concerts and being hopelessly in love with music generally, I get bored with live events. Most bands are competent and formulaic and I drift off halfway through. Neil Young is an exception to that of course. With his Crazy Horse set-up he always blows the crowd away with pummeling guitars and sandblasting feedback. I went to see him last night at Hyde Park and for the first 90 minutes he was on his usual good form, but then his closing rendition of Keep on Rocking in the Free World was blinding and at least 10 minutes long. He pulled all the tricks out of the bag and the crowd went crazy for it. I loved it, but as he came on for the encore, I wondered how on earth he could follow that. Frankly, he doesn't have a bigger crowd pleaser. I was thus pleasantly surprised when he launched into the Beatles' A Day in the Life. A wonderful song, of course, and perfectly suited to layering screeching guitars over the mental bits. **But then.** Halfway through the song where it builds up into a cacophony of noise and is released with piano and "got up, got out of bed..." this bloke strode from the side of the stage directly towards Neil. Like everyone else, I thought "oh-oh - someone's crashed the stage" _only for it to dawn that it was Paul McCartney!_ A genuine sharp intake of breath moment. This was no rock legend buddydom - it was clearly unrehearsed (I asked the lighting guy after) and all the better for it. Full of spontaneity and joy it was a shambolic and fabulous moment. Both men lost themselves in the tune and so did the crowd. What had been a good evening in the park became something I'll never forget.

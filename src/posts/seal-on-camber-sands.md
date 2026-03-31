@@ -1,0 +1,10 @@
+---
+title: "Seal on Camber Sands"
+date: 2010-12-31
+
+tags:
+  - posts
+layout: layouts/post
+---
+
+[![Photo](http://tempcarlbackup.files.wordpress.com/2010/12/photo-scaled-1000.jpg?w=300)](http://tempcarlbackup.files.wordpress.com/2010/12/photo-scaled-1000.jpg)
